@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "HistoryLogger",
+  "version": "1.0",
+  "host_permissions": [
+    "http://localhost:3000/*"
+  ],
+  "permissions": [
+    "tabs",
+    "scripting",
+    "http://localhost:3000/*",
+    "identity",
+    "history"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' http://localhost:3000/*; object-src 'self'"
+    },
+    "default_icon": {
+      "16": "clock.png",
+      "48": "clock.png"
+    }
+  },
+  "icons": {
+    "16": "clock.png",
+    "48": "clock.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
