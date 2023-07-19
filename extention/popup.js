@@ -1,4 +1,4 @@
-function populate() {
+function addNewEvents() {
 
     let x = document.getElementById("populating")
     let popDBMessage = document.createElement("div")
@@ -33,10 +33,6 @@ function populate() {
     })
 }
 
-window.onload = function () {
-    document.getElementById("populate").addEventListener("click", populate)
-}
-
 function sendEntry(text) {
     const url = 'http://localhost:3000/' + text;
 
@@ -59,14 +55,12 @@ function sendEntry(text) {
 function startLoop() {
 
     // Set the interval to 2 minutes (120 seconds)
-    const intervalInMilliseconds = 120000;
+    const intervalInMilliseconds = 2 * 60 * 1000;
 
     // Start the loop
     const loop = setInterval(addNewEvents, intervalInMilliseconds);
 }
 
-function addNewEvents() {
-
-
-
+window.onload = function () {
+    document.getElementById("populate").addEventListener("click", startLoop)
 }
