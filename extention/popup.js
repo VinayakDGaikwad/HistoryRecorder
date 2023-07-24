@@ -55,7 +55,7 @@ function sendEntry(text) {
 function startLoop() {
 
     // Set the interval to 2 minutes (120 seconds)
-    const intervalInMilliseconds = 2 * 60 * 1000;
+    const intervalInMilliseconds = 1 * 1000;
 
     // Start the loop
     const loop = setInterval(addNewEvents, intervalInMilliseconds);

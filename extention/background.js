@@ -10,7 +10,7 @@ function addNewEvents() {
   const epochTimeInMilliseconds = currentDate.getTime();
 
   // Convert 2 minutes to milliseconds
-  const twoMinutesInMilliseconds = 2 * 60 * 1000;
+  const twoMinutesInMilliseconds = 2 * 1000;
 
   // Subtract 2 minutes in milliseconds from the epoch time
   const newEpochTimeInMilliseconds = epochTimeInMilliseconds - twoMinutesInMilliseconds;
@@ -52,7 +52,7 @@ function sendEntry(text) {
 function startLoop() {
 
   // Set the interval to 2 minutes (120 seconds)
-  const intervalInMilliseconds = 2 * 60 * 1000;
+  const intervalInMilliseconds = 2 * 1000;
 
   // Start the loop
   const loop = setInterval(addNewEvents, intervalInMilliseconds);
@@ -60,5 +60,4 @@ function startLoop() {
 
 startLoop();
 
-console.log("safd");
-
+console.log("Started Tracking!");
