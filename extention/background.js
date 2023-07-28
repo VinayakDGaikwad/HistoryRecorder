@@ -61,3 +61,16 @@ function startLoop() {
 startLoop();
 
 console.log("Started Tracking!");
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  // Forward the message to the background service worker
+  chrome.runtime.sendMessage(message);
+});
+
+// background-service-worker.js
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.action === 'wakeUpServiceWorker') {
+    // Perform the desired action when the service worker is woken up
+    console.log('Service Worker woke up!');
+  }
+});

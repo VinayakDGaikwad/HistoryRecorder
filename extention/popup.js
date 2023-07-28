@@ -25,7 +25,9 @@ function addNewEvents() {
         for (let i = 0; i < listOfURLs.length; i++) {
 
             let title = listOfURLs[i].title
-
+            title.replace(/[^\w\s.-]/gi, '');
+            title.replace(/\s+/g, ' ');
+            
             sendEntry(title);
             console.log(title);
 
@@ -62,5 +64,5 @@ function startLoop() {
 }
 
 window.onload = function () {
-    document.getElementById("populate").addEventListener("click", startLoop)
-}
+    document.getElementById("populate").addEventListener("click", chrome.runtime.sendMessage({ action: 'wakeUpServiceWorker' }))
+};
